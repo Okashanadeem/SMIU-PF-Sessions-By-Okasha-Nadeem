@@ -488,53 +488,9 @@ if (age >= 65) {
 
 ### Example 1: Loop Types Comparison
 
-**File:** `day3_loops_demo.c`
+**File:** `loops_demo.c`
 
-```c
-/*
- * Example 1: Demonstrating for, while, and do-while loops
- * All three loops print numbers 1 to 5
- */
-
-#include <stdio.h>
-
-int main() {
-    int i;
-    
-    // Using for loop
-    printf("For loop: ");
-    for (i = 1; i <= 5; i++) {
-        printf("%d ", i);
-    }
-    printf("\n");
-    
-    // Using while loop
-    printf("While loop: ");
-    i = 1;
-    while (i <= 5) {
-        printf("%d ", i);
-        i++;
-    }
-    printf("\n");
-    
-    // Using do-while loop
-    printf("Do-while loop: ");
-    i = 1;
-    do {
-        printf("%d ", i);
-        i++;
-    } while (i <= 5);
-    printf("\n");
-    
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_loops_demo.c -o day3_loops_demo
-./day3_loops_demo
-```
+> **Compile & Run:**
 
 **Output:**
 ```
@@ -547,45 +503,10 @@ Do-while loop: 1 2 3 4 5
 
 ### Example 2: Break and Continue
 
-**File:** `day3_break_continue.c`
+**File:** `break_continue.c`
 
-```c
-/*
- * Example 2: Demonstrating break and continue statements
- */
 
-#include <stdio.h>
-
-int main() {
-    // Break example
-    printf("Break example (exit at 5):\n");
-    for (int i = 1; i <= 10; i++) {
-        if (i == 5) {
-            break;  // Exit loop
-        }
-        printf("%d ", i);
-    }
-    printf("\n\n");
-    
-    // Continue example
-    printf("Continue example (skip 3 and 6):\n");
-    for (int i = 1; i <= 8; i++) {
-        if (i == 3 || i == 6) {
-            continue;  // Skip this iteration
-        }
-        printf("%d ", i);
-    }
-    printf("\n");
-    
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_break_continue.c -o day3_break_continue
-./day3_break_continue
-```
+> **Compile & Run:**
 
 **Output:**
 ```
@@ -600,43 +521,9 @@ Continue example (skip 3 and 6):
 
 ### Example 3: Local vs Global Variables
 
-**File:** `day3_scope.c`
+**File:** `scope.c`
 
-```c
-/*
- * Example 3: Demonstrating scope - local vs global variables
- */
-
-#include <stdio.h>
-
-int global_var = 100;  // Global variable
-
-void function1() {
-    int local_var = 10;  // Local to function1
-    printf("Function1 - Local: %d, Global: %d\n", local_var, global_var);
-    global_var = 200;  // Can modify global
-}
-
-void function2() {
-    int local_var = 20;  // Different local variable
-    printf("Function2 - Local: %d, Global: %d\n", local_var, global_var);
-}
-
-int main() {
-    printf("Main - Global: %d\n", global_var);
-    function1();
-    function2();
-    printf("Main - Global after changes: %d\n", global_var);
-    
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_scope.c -o day3_scope
-./day3_scope
-```
+> **Compile & Run:**
 
 **Output:**
 ```
@@ -650,50 +537,9 @@ Main - Global after changes: 200
 
 ### Example 4: Function with Return Value
 
-**File:** `day3_factorial.c`
+**File:** `factorial.c`
 
-```c
-/*
- * Example 4: Function to calculate factorial
- * Demonstrates function with parameters and return value
- */
-
-#include <stdio.h>
-
-// Function declaration
-int factorial(int n);
-
-int main() {
-    int num, result;
-    
-    printf("Enter a positive integer: ");
-    scanf("%d", &num);
-    
-    if (num < 0) {
-        printf("Factorial not defined for negative numbers\n");
-    } else {
-        result = factorial(num);
-        printf("Factorial of %d = %d\n", num, result);
-    }
-    
-    return 0;
-}
-
-// Function definition
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_factorial.c -o day3_factorial
-./day3_factorial
-```
+> **Compile & Run:**
 
 **Sample I/O:**
 ```
@@ -705,43 +551,9 @@ Factorial of 5 = 120
 
 ### Example 5: Function with Loops
 
-**File:** `day3_sum_even.c`
+**File:** `sum_even.c`
 
-```c
-/*
- * Example 5: Function to calculate sum of even numbers up to N
- * Combines loops and functions
- */
-
-#include <stdio.h>
-
-// Function to calculate sum of even numbers from 1 to n
-int sumEven(int n) {
-    int sum = 0;
-    for (int i = 2; i <= n; i += 2) {
-        sum += i;
-    }
-    return sum;
-}
-
-int main() {
-    int limit, result;
-    
-    printf("Enter limit: ");
-    scanf("%d", &limit);
-    
-    result = sumEven(limit);
-    printf("Sum of even numbers from 1 to %d = %d\n", limit, result);
-    
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_sum_even.c -o day3_sum_even
-./day3_sum_even
-```
+> **Compile & Run:**
 
 **Sample I/O:**
 ```
@@ -754,63 +566,9 @@ Sum of even numbers from 1 to 10 = 30
 
 ### Example 6: Complete Program (Loops + Functions)
 
-**File:** `day3_multiplication_table.c`
+**File:** `multiplication_table.c`
 
-```c
-/*
- * Example 6: Multiplication table generator
- * Demonstrates modular programming with functions and loops
- */
-
-#include <stdio.h>
-
-// Function to print multiplication table
-void printTable(int num, int range) {
-    printf("\nMultiplication Table of %d:\n", num);
-    printf("-------------------------\n");
-    for (int i = 1; i <= range; i++) {
-        printf("%d x %d = %d\n", num, i, num * i);
-    }
-}
-
-// Function to get valid input
-int getPositiveNumber(const char *prompt) {
-    int num;
-    do {
-        printf("%s", prompt);
-        scanf("%d", &num);
-        if (num <= 0) {
-            printf("Please enter a positive number!\n");
-        }
-    } while (num <= 0);
-    return num;
-}
-
-int main() {
-    int number, range;
-    char choice;
-    
-    do {
-        number = getPositiveNumber("Enter number for table: ");
-        range = getPositiveNumber("Enter range (how many multiples): ");
-        
-        printTable(number, range);
-        
-        printf("\nGenerate another table? (y/n): ");
-        scanf(" %c", &choice);
-        
-    } while (choice == 'y' || choice == 'Y');
-    
-    printf("Thank you!\n");
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_multiplication_table.c -o day3_mult_table
-./day3_mult_table
-```
+> **Compile & Run:**
 
 **Sample I/O:**
 ```
@@ -855,53 +613,9 @@ MAIN:
 
 **Step 2: Implementation**
 
-**File:** `day3_prime_checker.c`
+**File:** `prime_checker.c`
 
-```c
-/*
- * Mini Project: Prime Number Checker
- * Uses function and loop to determine if number is prime
- */
-
-#include <stdio.h>
-
-// Function to check if a number is prime
-int isPrime(int n) {
-    if (n <= 1) {
-        return 0;  // Not prime
-    }
-    
-    // Check divisibility from 2 to n/2
-    for (int i = 2; i <= n / 2; i++) {
-        if (n % i == 0) {
-            return 0;  // Not prime (divisible)
-        }
-    }
-    
-    return 1;  // Prime
-}
-
-int main() {
-    int num;
-    
-    printf("Enter a positive integer: ");
-    scanf("%d", &num);
-    
-    if (isPrime(num)) {
-        printf("%d is a PRIME number\n", num);
-    } else {
-        printf("%d is NOT a prime number\n", num);
-    }
-    
-    return 0;
-}
-```
-
-**Compile & Run:**
-```bash
-gcc -std=c11 -Wall day3_prime_checker.c -o day3_prime_checker
-./day3_prime_checker
-```
+> **Compile & Run:**
 
 **Test Cases:**
 ```
@@ -910,63 +624,6 @@ Input: 12 → Output: 12 is NOT a prime number
 Input: 1  → Output: 1 is NOT a prime number
 Input: 29 → Output: 29 is a PRIME number
 ```
-
----
-
-## In-Class Activities
-
-### Activity 1: Trace a Loop (5 min)
-
-Give students this code and ask them to trace it manually:
-```c
-int sum = 0;
-for (int i = 1; i <= 4; i++) {
-    sum += i * 2;
-}
-printf("%d", sum);
-```
-
-**Answer:** 20 (2 + 4 + 6 + 8 = 20)
-
----
-
-### Activity 2: Complete the Function (5 min)
-
-Provide half-written function, ask students to complete:
-```c
-// Function to find maximum of two numbers
-int findMax(int a, int b) {
-    // Complete this function
-}
-```
-
-**Solution:**
-```c
-int findMax(int a, int b) {
-    if (a > b) {
-        return a;
-    } else {
-        return b;
-    }
-}
-```
-
----
-
-### Activity 3: Debug Common Errors (5 min)
-
-Show buggy code and ask students to find errors:
-```c
-void printNumbers() {
-    for (int i = 1; i <= 5 i++) {
-        printf("%d ", i)
-    }
-}
-```
-
-**Errors:**
-1. Missing semicolon after `i <= 5`
-2. Missing semicolon after `printf`
 
 ---
 
@@ -1021,243 +678,6 @@ Write a program with multiple functions:
 - Input function to get number
 - Processing function to check if palindrome
 - Output function to display result
-
----
-
-## Solutions
-
-### Solution 1: Square Function
-
-```c
-#include <stdio.h>
-
-int square(int n) {
-    return n * n;
-}
-
-int main() {
-    int num;
-    printf("Enter number: ");
-    scanf("%d", &num);
-    printf("Square of %d = %d\n", num, square(num));
-    return 0;
-}
-```
-
----
-
-### Solution 2: Sum of N Natural Numbers
-
-```c
-#include <stdio.h>
-
-int main() {
-    int n, sum = 0;
-    
-    printf("Enter N: ");
-    scanf("%d", &n);
-    
-    for (int i = 1; i <= n; i++) {
-        sum += i;
-    }
-    
-    printf("Sum of first %d natural numbers = %d\n", n, sum);
-    return 0;
-}
-```
-
----
-
-### Solution 3: Count Even and Odd
-
-```c
-#include <stdio.h>
-
-int main() {
-    int start, end, even_count = 0, odd_count = 0;
-    
-    printf("Enter start: ");
-    scanf("%d", &start);
-    printf("Enter end: ");
-    scanf("%d", &end);
-    
-    int i = start;
-    while (i <= end) {
-        if (i % 2 == 0) {
-            even_count++;
-        } else {
-            odd_count++;
-        }
-        i++;
-    }
-    
-    printf("Even numbers: %d\n", even_count);
-    printf("Odd numbers: %d\n", odd_count);
-    
-    return 0;
-}
-```
-
----
-
-### Solution 4: Multiplication Table (do-while)
-
-```c
-#include <stdio.h>
-
-int main() {
-    int num, i = 1;
-    
-    printf("Enter number: ");
-    scanf("%d", &num);
-    
-    printf("\nMultiplication Table of %d:\n", num);
-    do {
-        printf("%d x %d = %d\n", num, i, num * i);
-        i++;
-    } while (i <= 10);
-    
-    return 0;
-}
-```
-
----
-
-### Solution 5: Factorial with Function
-
-```c
-#include <stdio.h>
-
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
-}
-
-int main() {
-    int num;
-    
-    printf("Enter number: ");
-    scanf("%d", &num);
-    
-    if (num < 0) {
-        printf("Factorial not defined for negative numbers\n");
-    } else {
-        printf("Factorial of %d = %d\n", num, factorial(num));
-    }
-    
-    return 0;
-}
-```
-
----
-
-### Solution 6: Prime Number Function
-
-```c
-#include <stdio.h>
-
-int isPrime(int n) {
-    if (n <= 1) return 0;
-    for (int i = 2; i <= n / 2; i++) {
-        if (n % i == 0) return 0;
-    }
-    return 1;
-}
-
-int main() {
-    int n;
-    
-    printf("Enter N: ");
-    scanf("%d", &n);
-    
-    printf("Prime numbers from 1 to %d:\n", n);
-    for (int i = 2; i <= n; i++) {
-        if (isPrime(i)) {
-            printf("%d ", i);
-        }
-    }
-    printf("\n");
-    
-    return 0;
-}
-```
-
----
-
-### Solution 7: Power Function
-
-```c
-#include <stdio.h>
-
-int power(int base, int exp) {
-    int result = 1;
-    for (int i = 0; i < exp; i++) {
-        result *= base;
-    }
-    return result;
-}
-
-int main() {
-    int x, y;
-    
-    printf("Enter base: ");
-    scanf("%d", &x);
-    printf("Enter exponent: ");
-    scanf("%d", &y);
-    
-    printf("%d ^ %d = %d\n", x, y, power(x, y));
-    
-    return 0;
-}
-```
-
----
-
-### Solution 8: Modular Program (Palindrome)
-
-```c
-#include <stdio.h>
-
-// Input function
-int getNumber() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    return num;
-}
-
-// Processing function
-int isPalindrome(int n) {
-    int original = n, reversed = 0, remainder;
-    
-    while (n != 0) {
-        remainder = n % 10;
-        reversed = reversed * 10 + remainder;
-        n /= 10;
-    }
-    
-    return (original == reversed);
-}
-
-// Output function
-void displayResult(int num, int result) {
-    if (result) {
-        printf("%d is a palindrome\n", num);
-    } else {
-        printf("%d is NOT a palindrome\n", num);
-    }
-}
-
-int main() {
-    int number = getNumber();
-    int result = isPalindrome(number);
-    displayResult(number, result);
-    return 0;
-}
-```
 
 ---
 
@@ -1334,49 +754,49 @@ d) Error
 **Purpose:** Compare for, while, and do-while loops  
 **Topics:** Loop syntax, iteration control  
 **Compile:** `gcc -std=c11 -Wall day3_loops_demo.c -o day3_loops_demo`  
-**Run:** `./day3_loops_demo`  
+**Run:** `./loops_demo`  
 **Output:** All three loops print 1 2 3 4 5
 
 ### File 2: day3_break_continue.c
 **Purpose:** Demonstrate break and continue statements  
 **Topics:** Loop control, early exit, skipping iterations  
-**Compile:** `gcc -std=c11 -Wall day3_break_continue.c -o day3_break_continue`  
-**Run:** `./day3_break_continue`  
+**Compile:** 
+**Run:** `./break_continue`  
 **Test:** Observe which numbers are printed/skipped
 
 ### File 3: day3_scope.c
 **Purpose:** Show local vs global variable behavior  
 **Topics:** Variable scope, lifetime, accessibility  
-**Compile:** `gcc -std=c11 -Wall day3_scope.c -o day3_scope`  
-**Run:** `./day3_scope`  
+**Compile:** 
+**Run:** `./scope`  
 **Output:** Demonstrates how global variables are shared across functions
 
 ### File 4: day3_factorial.c
 **Purpose:** Calculate factorial using function  
 **Topics:** Function parameters, return values, loops  
-**Compile:** `gcc -std=c11 -Wall day3_factorial.c -o day3_factorial`  
-**Run:** `./day3_factorial`  
+**Compile:** 
+**Run:** `./factorial`  
 **Test Cases:** Try 0 (returns 1), 5 (returns 120), 10 (returns 3628800)
 
 ### File 5: day3_sum_even.c
 **Purpose:** Sum even numbers using function and loop  
 **Topics:** Combining functions with loops, return values  
-**Compile:** `gcc -std=c11 -Wall day3_sum_even.c -o day3_sum_even`  
-**Run:** `./day3_sum_even`  
+**Compile:** 
+**Run:** `./sum_even`  
 **Test Cases:** Try 10 (returns 30), 20 (returns 110)
 
 ### File 6: day3_multiplication_table.c
 **Purpose:** Complete modular program with multiple functions  
 **Topics:** Modular design, input validation, do-while menus  
-**Compile:** `gcc -std=c11 -Wall day3_multiplication_table.c -o day3_mult_table`  
-**Run:** `./day3_mult_table`  
+**Compile:** 
+**Run:** `./mult_table`  
 **Test:** Generate tables for different numbers
 
 ### File 7: day3_prime_checker.c
 **Purpose:** Mini project - check if number is prime  
 **Topics:** Function design, algorithm implementation, logical thinking  
-**Compile:** `gcc -std=c11 -Wall day3_prime_checker.c -o day3_prime_checker`  
-**Run:** `./day3_prime_checker`  
+**Compile:**   
+**Run:** `./prime_checker`  
 **Test Cases:** Primes (2, 3, 5, 7, 11), Non-primes (4, 6, 8, 9, 10)
 
 ---
@@ -1395,21 +815,7 @@ d) Error
 
 ## Congratulations!
 
-You've completed the 3-day C Programming Fundamentals course. You now know:
-
-✅ Program structure and syntax  
-✅ Variables and data types  
-✅ Operators and expressions  
-✅ Decision-making with conditions  
-✅ Loops for repetition  
-✅ Functions for modularity  
-✅ Scope and program organization
-
-**You're ready to write complete C programs!**
-
-Continue practicing daily, experiment with variations, and challenge yourself with increasingly complex problems. Programming is a skill that improves with consistent practice.
-
-**Good luck with your exam!**
+You've completed the 3-day C Programming Fundamentals course.
 
 ---
 
